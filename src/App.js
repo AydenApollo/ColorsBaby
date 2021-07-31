@@ -1,25 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import Color from './color-code'
+import { render } from '@testing-library/react';
 
 function App() {
+  let randomColor = () => {
+  let red = Math.round(Math.random() * 255)
+  let green = Math.round(Math.random() * 255)
+  let blue = Math.round(Math.random() * 255)
+  return {red: red, green: green, blue: blue};
+}
+  
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Color color={randomColor()}/>
+    </header>
     </div>
-  );
+  )
 }
 
 export default App;
